@@ -70,7 +70,8 @@ You can add notification, warning and error boxes like this:
 ### Notification
 
 {: .box-note}
-**Note:** [Do Forecasts of Bankruptcy Cause Bankruptcy?](https://arxiv.org/abs/2106.04503) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+**1** [Do Forecasts of Bankruptcy Cause Bankruptcy?](https://arxiv.org/abs/2106.04503) - Papakostas, D., Hahn, P.R., Murray, J., Zhou, F, and Gerakos, J.
+
 
 ### Warning
 
