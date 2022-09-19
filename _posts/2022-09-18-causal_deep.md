@@ -353,8 +353,7 @@ nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
 as an argument.]({{ site.baseurl}}/img/NN_draw_farrell_alpha.png)  {#fig:farrell-pic width="12cm"}
 
-<a href="{{ site.baseurl}}/img/NN_draw_farrell_alpha.png" data-lightbox="falcon9-large" data-title="Farrell Method"><img src = "({{site.baseurl}}/img/NN_draw_farrell_alpha.png)
-  title='logo'> </a>
+<a href="{{ site.baseurl }}img/NN_draw_farrell_alpha.png" data-lightbox="falcon9-large" data-title="Farrell Method"><img src = "{{ site.baseurl }}img/NN_draw_farrell_alpha.png title='Farrell Method'> </a>
   
   
 
