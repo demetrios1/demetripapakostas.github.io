@@ -37,7 +37,7 @@ the average treatment effect (ATE) may be of questionable utility. The
 challenge of estimating a heterogeneous conditional average treatment
 effect (CATE), is evident in the fact that the estimand is no longer a
 scalar-valued parameter but a function of a (potentially high
-                                             dimensional) covariate vector $X$. In recent years, researchers have
+                                             dimensional) covariate vector $$X$$. In recent years, researchers have
 proposed to use machine learning methods for nonparametric CATE
 estimation ([@hahn2020bayesian]; [@krantsevich2021stochastic],
             [@hill2011bayesian]; [@wager2018estimation]; [@farrell2020deep]).
