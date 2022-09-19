@@ -14,7 +14,10 @@ comments: true
 ## A New Post
 
 Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
-
+## Introduction
+A common problem in causal inference is to infer the effect of a binary treatment, 
+$Z$, on a scalar-valued outcome $Y$. When the effect of $Z$ on $Y$ is posited to be constant 
+for all subjects, or \textit{homogeneous}, the estimand of interest (average treatment effect) is a scalar-valued 
 ## Introduction
 	A common problem in causal inference is to infer the effect of a binary treatment, 
 	$Z$, on a scalar-valued outcome $Y$. When the effect of $Z$ on $Y$ is posited to be constant 
