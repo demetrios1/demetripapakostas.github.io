@@ -33,4 +33,3 @@ Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the 
 	$\alpha(X)$ and $\beta(X)$. Finally, we consider a ``naive" approach that partitions the data into 
 	treatment and control groups, and learns a separate function on each subset of the data. These functions can be 
 	used to estimate the CATE by subtracting predictions of the ``treatment function'' from those of the ``control function."
-
