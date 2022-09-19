@@ -402,7 +402,7 @@ model's estimate of $$\beta$$ $$Y=\beta Z+X\delta +\varepsilon
         \label{eq:linmod_eq}$$ where $$\beta$$ is the coefficient of
 interest and represents the average treatment effect. The model is fit
 using ordinary least squares (OLS). We allow for interaction effects
-between $$\bm{X}$$ and $$Z$$.
+between $$X$$ and $$Z$$.
 
 # Simulation Summary
 
@@ -411,27 +411,27 @@ strong targeted selection, and a simpler function for $$\beta$$ (which
 allows for heterogeneous effects) to illustrate the effect of targeted
 selection. $$\begin{aligned}
         \begin{split}
-            \bm{x}_1, \bm{x}_2, \bm{x}_3&\sim N(0,1)\\
-            \bm{x}_4&\sim \text{binomial}(n=2, p=0.5)\\
-            \bm{x}_5 &\sim \text{Bern}(p=0.5)\\
-            \bm{X} &= \qty(\bm{x}_1, \bm{x}_2, \bm{x}_3, \bm{x}_4, \bm{x}_5)\\
-            \beta\qty(\bm{X}) &= \begin{cases}
-                0.20+0.5*\bm{x}_1\cdot\bm{x}_4& \text{small treatment to prognosis}\\
-                5+0.5*\bm{x}_1\cdot\bm{x}_4& \text{large treatment to prognosis}\\
+            X_1, X_2, X_3&\sim N(0,1)\\
+            X_4&\sim \text{binomial}(n=2, p=0.5)\\
+            X_5 &\sim \text{Bern}(p=0.5)\\
+            X &= \left(X_1, X_2, X_3, X_4, X_5\right)\\
+            \beta\left(X\right) &= \begin{cases}
+                0.20+0.5*X_1\cdot X_4& \text{small treatment to prognosis}\\
+                5+0.5*X_1\cdot X_4& \text{large treatment to prognosis}\\
             \end{cases}\\
-            \alpha\qty(\bm{X})&=0.5\cos\qty(2\bm{x}_1)+0.95*\abs{\bm{x}_3\cdot\bm{x}_5}-0.2*\bm{x}_2+1.5\\
-            \pi(\bm{X}) &= 0.70*\Phi\qty(\frac{\alpha(\bm{X})}{s(\alpha(\bm{X}))}-3.5)+u/10+0.10\\
+            \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdotX_5}-0.2*X_2+1.5\\
+            \pi(X) &= 0.70*\Phi\left(\frac{\alpha(X)}{s(\alpha(X))}-3.5\right)+u/10+0.10\\
             u&\sim \text{uniform}(0,1)\\
-            Y&= \alpha(\bm{X})+\beta(\bm{X})Z+\sigma\varepsilon\\
+            Y&= \alpha(X)+\beta(X)Z+\sigma\varepsilon\\
             \varepsilon &\sim N(0,1)\\
-            \sigma  &= \text{sd}(\alpha(\bm{X}))\cdot \kappa \\
-            Z &\sim \text{Bern}(p=\pi(\bm{X}))
+            \sigma  &= \text{sd}(\alpha(X))\cdot \kappa \\
+            Z &\sim \text{Bern}(p=\pi(X))
         \end{split}
         \label{eq:dgp1}
     \end{aligned}$$
 
 We choose the total number of parameters in the Shared architecture to
-be about the same as the separate network ($\alpha$ + $\beta$ networks).
+be about the same as the separate network ($$\alpha$$ + $$\beta$$ networks).
 In the Shared network, this means we have 100 hidden nodes in layer 1,
 and 26 in layer 2, meaning 3,280 total parameters.
 
