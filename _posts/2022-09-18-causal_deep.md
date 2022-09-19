@@ -171,22 +171,22 @@ These covariates might include demographic variables, health markers
 measured before treatment administration, survey variables measuring
 attitudes or preferences, and so on.
 
-Consider a simple motivating example, in which $X$ is age, $Z$ is a
-blood pressure medication, and $Y$ is blood pressure. Older patients are
-more likely to have high blood pressure, so we would expect that $X$ and
-$Y$ are not independent. Older patients, who visit the doctor more
+Consider a simple motivating example, in which $$X$$ is age, $$Z$$ is a
+blood pressure medication, and $$Y$$ is blood pressure. Older patients are
+more likely to have high blood pressure, so we would expect that $$X$$ and
+$$Y$$ are not independent. Older patients, who visit the doctor more
 frequently, are also potentially more likely to be prescribed blood
-pressure medicine. In this case, we would not expect $Y^1, Y^0 \perp Z$.
+pressure medicine. In this case, we would not expect $$Y^1, Y^0 \perp Z$$.
 Older patients are more likely to receive blood pressure medicine and
-also more likely to have high blood pressure so that observing $Z = 1$
-changes the distribution of $Y^1$ and $Y^0$.
+also more likely to have high blood pressure so that observing $$Z = 1$$
+changes the distribution of $$Y^1$$ and $$Y^0$$.
 
 We can work around this limitation with a modified assumption,
 *conditional exchangeability*: $$Y^1, Y^0 \perp Z \mid X$$. In words, this
 states that, after we control for the effect of $X$ on treatment
 assignment, the data satisfy exchangeability. Similarly, we no longer
-have that $P(Z = 1)$ is the same for all subjects, so we modify the
-positivity assumption to hold that $0 < P(Z = 1 \mid X) < 1$. Under this
+have that $$P(Z = 1)$$ is the same for all subjects, so we modify the
+positivity assumption to hold that $$0 < P(Z = 1 \mid X) < 1$$. Under this
 set of assumptions, we define a new IPW estimator as
 $$\frac{YZ}{p(Z = 1 \mid X)} - \frac{Y(1-Z)}{1 - p(Z = 1 \mid X)}$$ and
 can show that its expected value is the ATE.
@@ -215,7 +215,7 @@ We define the *Conditional Average Treatment Effect* (CATE) as
 $$\mathbb{E}\left(Y^1 - Y^0 \mid X = x\right)$$. Intuitively, this defines
 a treatment effect for the conditional distribution of $$Y^1$$ and $$Y^0$$
 in which $$X = x$$. Note that with this modification we define not a
-single parameter $\beta$ but a function $X \longrightarrow \beta(X)$$. If
+single parameter $$\beta$$ but a function $$X \longrightarrow \beta(X)$$. If
 $$X$$ is binary or categorical, this can be done empirically by
 partitioning the data into subsets $$\left\{x: x = s\right\}$$ and then
 estimating the ATE on the subsets. But in general, with continuous $$X$$
