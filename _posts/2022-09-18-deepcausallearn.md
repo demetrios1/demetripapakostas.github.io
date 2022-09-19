@@ -16,7 +16,7 @@ comments: true
 Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
 ## Introduction
 A common problem in causal inference is to infer the effect of a binary treatment, 
-$Z$, on a scalar-valued outcome $Y$. When the effect of $Z$ on $Y$ is posited to be constant 
+$Z$, on a scalar-valued outcome $$Y$$. When the effect of $Z$ on $Y$ is posited to be constant 
 for all subjects, or \textit{homogeneous}, the estimand of interest (average treatment effect) is a scalar-valued parameter, which admits a number of common estimators. When the assumption of treatment effect homogeneity is 
 	unwarranted, estimates of the average treatment effect (ATE) may be of questionable utility. The challenge of 
 	estimating a heterogeneous conditional average treatment effect (CATE), is evident in the fact that the estimand is no longer 
