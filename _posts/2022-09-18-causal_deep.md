@@ -256,8 +256,8 @@ $$\begin{aligned}
 the treatment effect function, which given the assumptions in the prior
 section, can be written as
 $$\mathbb{E}\left(Y \mid X, Z = 1\right) - \mathbb{E}\left(Y \mid X, Z = 0\right)$$.
-$$\alpha(X)$ corresponds to $\mathbb{E}\left(Y \mid X, Z = 0\right)$$
-which we refer to as the *prognostic function*, $\varepsilon$ is random
+$$\alpha(X)$$ corresponds to $$\mathbb{E}\left(Y \mid X, Z = 0\right)$$
+which we refer to as the *prognostic function*, $$\varepsilon$$ is random
 noise, and $$\pi(X) = \mathbb{P}\left(Z = 1 | X\right)$$ which we refer to
 as the *propensity function*.
 
