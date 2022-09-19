@@ -240,3 +240,64 @@ into separate networks with no shared weights may yield better CATE estimates on
 	$\hat{\pi}(x_i)$ is an estimate of the propensity function
     
 ![NN_draw_alpha.png]({{site.baseurl}}/_posts/NN_draw_alpha.png)
+
+While the shared-weights versus separate weights distinction between Farrell and BCF nnet has been made clear, a subtle difference between the architectures is that BCF nnet allows for an estimate of the propensity function to be incorporated as a feature in the $\alpha(X)$ network. Since targeted selection implies $\alpha(X)$ is a function of $\pi(X)$, this parameterization was observed to be helpful in \cite{hahn2020bayesian}.
+	
+In \cite{farrell2020deep}, the authors develop confidence intervals for their architecture's estimates (relying on influence functions, a common tool for calculating standard errors in non-parametrics).  We incorporated these intervals into our architecture, but found that they were far too tight and exhibited poor coverage in the low $n$ settings we were studying.  We therefore do not report or comment further.  
+
+# Separate Network Regression Approach 
+
+The "naive'' method in our comparison employs two completely separate regression models, \begin{equation}
+Y_1(X) = \E{Y \mid Z=1, X} \text{   and   } Y_0(X) = \E{Y \mid Z=0, X}
+\label{eq:naive}
+\end{equation}
+With these two regression functions, our estimate of $\beta(X)$ is simply $\beta(X) = Y_1(X) - Y_0(X)$.  Each $Y_i(X)$ is constructed as a 2-layer fully connected neural network, with the number of parameters chosen to be similar to the number chosen for the Farrell and the BCF architecture.  
+	
+# Linear Model
+We also compare our two neural network architectures to a simple linear model's estimate of $\beta$
+\begin{equation}
+		Y=\beta Z+X\delta +\varepsilon
+		\label{eq:linmod_eq}
+\end{equation}
+where $\beta$ is the coefficient of interest and represents the average treatment effect. The model is fit using ordinary least squares (OLS).  We allow for interaction effects between $\bm{X}$ and $Z$.
+## Simulation Summary 
+\autoref{eq:dgp1} is the first DGP we run. We choose a complex function for $\alpha$ and strong targeted selection, and a simpler function for $\beta$ (which allows for heterogeneous effects) to illustrate the effect of targeted selection.  
+	\begin{align}
+		\begin{split}
+			\bm{x}_1, \bm{x}_2, \bm{x}_3&\sim N(0,1)\\
+			\bm{x}_4&\sim \text{binomial}(n=2, p=0.5)\\
+			\bm{x}_5 &\sim \text{Bern}(p=0.5)\\
+			\bm{X} &= \qty(\bm{x}_1, \bm{x}_2, \bm{x}_3, \bm{x}_4, \bm{x}_5)\\
+			\beta\qty(\bm{X}) &= \begin{cases}
+				0.20+0.5*\bm{x}_1\cdot\bm{x}_4& \text{small treatment to prognosis}\\
+				5+0.5*\bm{x}_1\cdot\bm{x}_4& \text{large treatment to prognosis}\\
+			\end{cases}\\
+			\alpha\qty(\bm{X})&=0.5\cos\qty(2\bm{x}_1)+0.95*\abs{\bm{x}_3\cdot\bm{x}_5}-0.2*\bm{x}_2+1.5\\
+			\pi(\bm{X}) &= 0.70*\Phi\qty(\frac{\alpha(\bm{X})}{s(\alpha(\bm{X}))}-3.5)+u/10+0.10\\
+			u&\sim \text{uniform}(0,1)\\
+			Y&= \alpha(\bm{X})+\beta(\bm{X})Z+\sigma\varepsilon\\
+			\varepsilon &\sim N(0,1)\\
+			\sigma  &= \text{sd}(\alpha(\bm{X}))\cdot \kappa \\
+			Z &\sim \text{Bern}(p=\pi(\bm{X}))
+		\end{split}
+		\label{eq:dgp1}
+	\end{align}
+	
+	
+	
+	
+We choose the total number of parameters in the Shared architecture to be about the same as the separate network ($\alpha$ + $\beta$ networks). In the Shared network, this means we have 100 hidden nodes in layer 1, and 26 in layer 2, meaning 3,280 total parameters. 
+	
+In the BCF Nnet architecure, we have 60 parameters in the $\alpha$ first layer, 32 hidden nodes in the second layer.  For the $\beta$ network, we have 30 and 20 hidden nodes respectively. This yields 3,226 total parameters.  For both methods, we use a learning rate of 0.001 with an Adam Optimizer, we use Sigmoid activation, binary cross entropy loss for the propensity, MSE for the other networks, ReLu activation (double check), 250 epochs, and a batch size  of 64.  The  dropout  rate is 0.25 in every layer.
+	The propensity score for the BCF NNet architecture is estimated using a 2 layer fully connected neural network with 100 and 25 hidden nodes respectively, and the rest of the parameters the same as above.  
+
+In the separate network approach, we build the architecture
+	separately using a 2-layer fully constructed neural network  (for both $Y_1$ and $Y_0$, as described in \autoref{eq:naive}) infrastructure with 50 hidden nodes in layer 1 and 26 in layer 2 for both models.  This is a total of 3,306 parameters. The other hyperparameters are the same as the BCF NNet and Shared Network approach. % With these two regression functions, our estimate of $\beta(X)$ is simply $\beta(\bm{X}) = Y_1(\bm{X}) - Y_0(\bm{X})$.
+	
+
+	
+\autoref{tab:sim_results_smalltreat} shows results using both the Shared Network approach \cite{farrell2020deep} and the BCF Nnet approach we present.  This table indicates some RIC which biases the Farrell approach. The method we propose also has additional flexibility in that the propensity estimate can be estimated with any method and passed in, it need not be a MLP approach.  Additionally, because we separate the networks, like in the original BCF paper \cite{hahn2020bayesian}, we can add additional regularization on the $\beta$ network\footnote{In the world of neural networks, this could entail changing dropout rates, implementing early stopping, or weight-decay, amongst other approaches. In general, an advantage of Neural Networks, particularly when using a well developed and maintained service like pyTorch is the ease in customizing one's model for one's needs.}. 
+	
+\autoref{tab:sim_results_largetreat} shows results with a large treatment to prognosis ratio.  In this setting, even with RIC presumably still being relevant due to the strong targeted selection in \autoref{eq:dgp1} (see right panel of \autoref{fig:dpg1}), the large treatment effect dominating allows for the extra parameters of the shared network approach to out-perform the separate network approach.  However, as the sample size  increases, the gap disappears, leading us to believe with sufficient sample size, this difference in methods would be minimal.  
+	
+	
