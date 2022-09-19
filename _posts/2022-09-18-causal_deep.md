@@ -347,7 +347,7 @@ reference="fig:farrell-pic"}).
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.](NN_draw_farrell_alpha){#fig:farrell-pic width="12cm"}
+as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha){#fig:farrell-pic width="12cm"}
 
 Since $$Y$$ is real-valued, we use mean squared error (MSE) as a loss
 function in training each of the methods introduced in this section.
@@ -367,7 +367,7 @@ the BCF nnet architecture as in Figure
 
 ![The BCF nnet architecture, where $$G(\cdot)$$ is an activation function
 that takes $$\alpha(X)+\beta(X)Z$$ as an
-argument.](NN_draw_alpha){#fig:nnbcf-pic width="16cm"}
+argument.]({{site.baseurl}}/img/NN_draw_alpha){#fig:nnbcf-pic width="16cm"}
 
 While the shared-weights versus separate weights distinction between
 Farrell and BCF nnet has been made clear, a subtle difference between
@@ -476,7 +476,6 @@ mean of $$\alpha(\bm{X})=1.95$$, and the range of
 $$\pi(\bm{X})=\qty(0.11, 0.90)$$, with mean of
 0.37.](dgp_1_summary.png){#fig:dpg1 width="\\textwidth"}
 
-![demetri_link.JPG]({{site.baseurl}}/demetri_link.JPG)
 
 ![dgp_1_summary.png]({{site.baseurl}}/img/dgp_1_summary.png)
 
@@ -500,28 +499,6 @@ for the shared and BCF architectures.
 
 # Data Example
 
--   Some ideas for data
-
--   [Glasses prevent covid](https://pubmed.ncbi.nlm.nih.gov/33910839/)I
-    am trying to get access to the data that said eye-glass wearing
-    reduced covid risk. Email request sent
-
--   Blue light glass effect on eyes and sleep, but there really isn't a
-    lot of data out there on this
-
--   The Oregon medical lottery would be interesting, and we have access
-    to that
-
--   Have access to driving fatality data by state and whether or not a
-    ban on texting/cell phones is in place. These data are a combination
-    of a few different datasets, so we have rich demographics as well as
-    data on how many of the drivers involved were under the influence,
-    but the time part makes the propensity function's role more iffy.
-    Also, not entirely sure this is really confounded.
-
--   [Long covid](https://www.nature.com/articles/s41591-022-01909-w)
-    This is also an interesting study that hopefully releases their data
-    upon email request.
 
 [@onyper2012class] is the data we look at for the moment. The dataset we
 are interested in has 253 observations with 1 treatment variable, 1
