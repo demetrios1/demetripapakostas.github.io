@@ -346,13 +346,17 @@ fully connected neural network with two hidden layers and a two-node
 parameter layer which outputs $$\alpha(X)$$ and $$\beta(X)$$. The output of
 this architecture is then a linear combination of the two nodes in the
 parameters layer, $$\alpha(x)+\beta(x)z$$ (see Figure
-[1](#fig:farrell-pic){reference-type="ref"
+[1](#fig:farrell-pic)
+
+%{reference-type="ref"
 reference="fig:farrell-pic"}).
 
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.]({{ site.baseurl}}/img/NN_draw_farrell_alpha.png)  {#fig:farrell-pic width="12cm"}
+as an argument.]({{ site.baseurl}}/img/NN_draw_farrell_alpha.png)  
+
+%{#fig:farrell-pic width="12cm"}
 
 <a href="{{ site.baseurl }}img/NN_draw_farrell_alpha.png" data-lightbox="falcon9-large" data-title="Farrell Method"><img src = "{{ site.baseurl }}img/NN_draw_farrell_alpha.png title='Farrell Method'> </a>
   
