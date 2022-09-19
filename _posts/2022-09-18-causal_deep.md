@@ -82,9 +82,9 @@ In order to make the problem precise, we begin by introducing notation
 and defining our estimators. We will use the following conventions in
 our notation:
 
--   Bold upper case letters (i.e. $\mathbf{X}$) refer to random matrices
+-   Bold upper case letters (i.e. $$\mathbf{X}$$) refer to random matrices
 
--   Bold lower case letters (i.e. $\mathbf{x}$) refer to instantiations
+-   Bold lower case letters (i.e. $$\mathbf{x}$$) refer to instantiations
     of random matrices
 
 -   Regular upper case letters ($$X$$, $$Y$$, $$Z$$) refer to random variables
