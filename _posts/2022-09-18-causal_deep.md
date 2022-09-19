@@ -124,7 +124,7 @@ nature of these random variables is important to underscore before we
 define assumptions and estimators. These two random variables are often
 referred to as *potential outcomes* (see for example
 [@hernan2020causal]). The variables are random because even in the
-counterfactual scenario in which only treatment $i$ has been
+counterfactual scenario in which only treatment $$i$$ has been
 administered, $$Y$$ may potentially be influenced by other factors.
 
 We can define the average treatment effect (ATE) as
@@ -351,7 +351,13 @@ reference="fig:farrell-pic"}).
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha.png)
+as an argument.]({{ site.baseurl}}/img/NN_draw_farrell_alpha.png)  {#fig:farrell-pic width="12cm"}
+
+<a href="{{ site.baseurl}}/img/NN_draw_farrell_alpha.png" data-lightbox="falcon9-large" data-title="Farrell Method"><img src = "({{site.baseurl}}/img/NN_draw_farrell_alpha.png)
+  title='logo'> </a>
+  
+  
+
 
 Since $$Y$$ is real-valued, we use mean squared error (MSE) as a loss
 function in training each of the methods introduced in this section.
