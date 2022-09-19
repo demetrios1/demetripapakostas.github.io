@@ -222,7 +222,7 @@ The architecture of the model is discussed in depth in later sections, so here w
 	The output of this architecture is then a linear combination of the two nodes in the parameters layer, $\alpha(x)+\beta(x)z$ (see Figure \ref{fig:farrell-pic}).
     
 
-![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_farrell_alpha.png)
+![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/NN_draw_farrell_alpha.png)
 
     
 
@@ -239,7 +239,7 @@ into separate networks with no shared weights may yield better CATE estimates on
 	In \cite{hahn2020bayesian}, $\alpha$ and $\beta$ are given independent BART priors (\cite{chipman2010bart}). 
 	$\hat{\pi}(x_i)$ is an estimate of the propensity function
     
-![NN_draw_alpha.png]({{site.baseurl}}/_posts/NN_draw_alpha.png)
+![NN_draw_alpha.png]({{site.baseurl}}/NN_draw_alpha.png)
 
 While the shared-weights versus separate weights distinction between Farrell and BCF nnet has been made clear, a subtle difference between the architectures is that BCF nnet allows for an estimate of the propensity function to be incorporated as a feature in the $\alpha(X)$ network. Since targeted selection implies $\alpha(X)$ is a function of $\pi(X)$, this parameterization was observed to be helpful in \cite{hahn2020bayesian}.
 	
@@ -299,5 +299,5 @@ In the separate network approach, we build the architecture
 \autoref{tab:sim_results_smalltreat} shows results using both the Shared Network approach \cite{farrell2020deep} and the BCF Nnet approach we present.  This table indicates some RIC which biases the Farrell approach. The method we propose also has additional flexibility in that the propensity estimate can be estimated with any method and passed in, it need not be a MLP approach.  Additionally, because we separate the networks, like in the original BCF paper \cite{hahn2020bayesian}, we can add additional regularization on the $\beta$ network\footnote{In the world of neural networks, this could entail changing dropout rates, implementing early stopping, or weight-decay, amongst other approaches. In general, an advantage of Neural Networks, particularly when using a well developed and maintained service like pyTorch is the ease in customizing one's model for one's needs.}. 
 	
 \autoref{tab:sim_results_largetreat} shows results with a large treatment to prognosis ratio.  In this setting, even with RIC presumably still being relevant due to the strong targeted selection in \autoref{eq:dgp1} (see right panel of \autoref{fig:dpg1}), the large treatment effect dominating allows for the extra parameters of the shared network approach to out-perform the separate network approach.  However, as the sample size  increases, the gap disappears, leading us to believe with sufficient sample size, this difference in methods would be minimal.  
-	![dgp_1_summary.png]({{site.baseurl}}/_posts/dgp_1_summary.png)
+	![dgp_1_summary.png]({{site.baseurl}}/dgp_1_summary.png)
     ![demetri_link.JPG]({{site.baseurl}}/demetri_link.JPG)
