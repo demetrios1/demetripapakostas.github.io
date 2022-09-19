@@ -351,7 +351,7 @@ reference="fig:farrell-pic"}).
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha)
+as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha.png)
 
 Since $$Y$$ is real-valued, we use mean squared error (MSE) as a loss
 function in training each of the methods introduced in this section.
@@ -371,7 +371,8 @@ the BCF nnet architecture as in Figure
 
 ![The BCF nnet architecture, where $$G(\cdot)$$ is an activation function
 that takes $$\alpha(X)+\beta(X)Z$$ as an
-argument.]({{site.baseurl}}/img/NN_draw_alpha){#fig:nnbcf-pic width="16cm"}
+argument.]({{site.baseurl}}/img/NN_draw_alpha.png){#fig:nnbcf-pic width="16cm"}
+
 
 While the shared-weights versus separate weights distinction between
 Farrell and BCF nnet has been made clear, a subtle difference between
