@@ -10,7 +10,7 @@ author:
 bibliography:
   - deep-causal-paper.bib
 title: >-
-  **Deep Learning for Causal Inference**\A Comparison of Architectures for
+  Deep Learning for Causal Inference: A Comparison of Architectures for
   Heterogeneous Treatment EffectEstimation
 published: true
 layout: post
