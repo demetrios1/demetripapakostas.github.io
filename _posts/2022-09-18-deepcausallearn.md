@@ -220,3 +220,5 @@ The architecture of the model is discussed in depth in later sections, so here w
 	\end{equation}
 	where $G(u), u\in \mathbb{R}$ is a known link function specified by the researcher, and $\alpha(\cdot)$ and $\beta(\cdot)$ are \emph{unknown} functions to be estimated. Since we are interested in effects of $Z$ on a real-valued $Y$, we use an identity link function so that $G()$ can be removed from the equations and we have $\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha(x)+\beta(x)z$. The authors propose estimating $\alpha(\cdot)$ and $\beta(\cdot)$ with one deep fully connected neural network. We implement this architecture as a fully connected neural network with two hidden layers and a two-node parameter layer which outputs $\alpha(X)$ and $\beta(X)$. 
 	The output of this architecture is then a linear combination of the two nodes in the parameters layer, $\alpha(x)+\beta(x)z$ (see Figure \ref{fig:farrell-pic}).
+    
+    ![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_alpha.png)
