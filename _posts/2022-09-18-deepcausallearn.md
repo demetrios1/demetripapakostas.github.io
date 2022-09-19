@@ -221,4 +221,22 @@ The architecture of the model is discussed in depth in later sections, so here w
 	where $G(u), u\in \mathbb{R}$ is a known link function specified by the researcher, and $\alpha(\cdot)$ and $\beta(\cdot)$ are \emph{unknown} functions to be estimated. Since we are interested in effects of $Z$ on a real-valued $Y$, we use an identity link function so that $G()$ can be removed from the equations and we have $\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha(x)+\beta(x)z$. The authors propose estimating $\alpha(\cdot)$ and $\beta(\cdot)$ with one deep fully connected neural network. We implement this architecture as a fully connected neural network with two hidden layers and a two-node parameter layer which outputs $\alpha(X)$ and $\beta(X)$. 
 	The output of this architecture is then a linear combination of the two nodes in the parameters layer, $\alpha(x)+\beta(x)z$ (see Figure \ref{fig:farrell-pic}).
     
-    ![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_alpha.png)
+
+    ![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_farrell_alpha.png)
+
+    
+
+Since $Y$ is real-valued, we use mean squared error (MSE) as a loss function in training each of the methods introduced in this section.
+
+# BCF NNet
+Based on the results and discussion in \cite{hahn2020bayesian}, we hypothesize that splitting $\alpha(\cdot)$ and $\beta(\cdot)$ 
+into separate networks with no shared weights may yield better CATE estimates on some data generating processes (DGPs). 
+	The BCF nnet method specifies 
+	\begin{equation}
+		\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha\left(x, \hat{\pi}(x)\right)+\beta(x)z
+		\label{fig:BCF_main}
+	\end{equation}
+	In \cite{hahn2020bayesian}, $\alpha$ and $\beta$ are given independent BART priors (\cite{chipman2010bart}). 
+	$\hat{\pi}(x_i)$ is an estimate of the propensity function
+    
+![NN_draw_alpha.png]({{site.baseurl}}/_posts/NN_draw_alpha.png)
