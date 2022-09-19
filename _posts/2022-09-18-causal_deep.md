@@ -330,12 +330,12 @@ model comparison.
 In [@farrell2020deep], the authors posit that
 $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=G\left(\alpha(x)+\beta(x)z\right)
         \label{farrell_eq}$$ where $$G(u), u\in \mathbb{R}$$ is a known
-link function specified by the researcher, and $$\alpha(\cdot)$$ and
-$$\beta(\cdot)$$ are *unknown* functions to be estimated. Since we are
+link function specified by the researcher, and $$\alpha(\dot)$$ and
+$$\beta(\dot)$$ are *unknown* functions to be estimated. Since we are
 interested in effects of $$Z$$ on a real-valued $$Y$$, we use an identity
 link function so that $$G()$$ can be removed from the equations and we
 have $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha(x)+\beta(x)z$$. The
-authors propose estimating $$\alpha(\cdot)$$ and $$\beta(\cdot)$$ with one
+authors propose estimating $$\alpha(\dot)$$ and $$\beta(\dot)$$ with one
 deep fully connected neural network. We implement this architecture as a
 fully connected neural network with two hidden layers and a two-node
 parameter layer which outputs $$\alpha(X)$$ and $$\beta(X)$$. The output of
@@ -355,7 +355,7 @@ function in training each of the methods introduced in this section.
 ## BCF nnet
 
 Based on the results and discussion in [@hahn2020bayesian], we
-hypothesize that splitting $$\alpha(\cdot)$$ and $$\beta(\cdot)$$ into
+hypothesize that splitting $$\alpha(\dot)$$ and $$\beta(\dot)$$ into
 separate networks with no shared weights may yield better CATE estimates
 on some data generating processes (DGPs). The BCF nnet method specifies
 $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha\left(x, \hat{\pi}(x)\right)+\beta(x)z
@@ -365,7 +365,7 @@ $$\hat{\pi}(x_i)$$ is an estimate of the propensity function We implement
 the BCF nnet architecture as in Figure
 [2](#fig:nnbcf-pic){reference-type="ref" reference="fig:nnbcf-pic"}.
 
-![The BCF nnet architecture, where $$G(\cdot)$$ is an activation function
+![The BCF nnet architecture, where $$G(\dot)$$ is an activation function
 that takes $$\alpha(X)+\beta(X)Z$$ as an
 argument.](NN_draw_alpha){#fig:nnbcf-pic width="16cm"}
 
@@ -416,10 +416,10 @@ selection. $$\begin{aligned}
             X_5 &\sim \text{Bern}(p=0.5)\\
             X &= \left(X_1, X_2, X_3, X_4, X_5\right)\\
             \beta\left(X\right) &= \begin{cases}
-                0.20+0.5*X_1\cdot X_4& \text{small treatment to prognosis}\\
-                5+0.5*X_1\cdot X_4& \text{large treatment to prognosis}\\
+                0.20+0.5*X_1\dot X_4& \text{small treatment to prognosis}\\
+                5+0.5*X_1\dot X_4& \text{large treatment to prognosis}\\
             \end{cases}\\
-            \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdotX_5-0.2*X_2+1.5\\
+            \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdot X_5-0.2*X_2+1.5\\
             \pi(X) &= 0.70*\Phi\left(\frac{\alpha(X)}{s(\alpha(X))}-3.5\right)+u/10+0.10\\
             u&\sim \text{uniform}(0,1)\\
             Y&= \alpha(X)+\beta(X)Z+\sigma\varepsilon\\
