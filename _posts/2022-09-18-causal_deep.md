@@ -332,7 +332,7 @@ $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=G\left(\alpha(x)+\beta(x)z\right)
         \label{farrell_eq}$$ where $$G(u), u\in \mathbb{R}$$ is a known
 link function specified by the researcher, and $$\alpha(\cdot)$$ and
 $$\beta(\cdot)$$ are *unknown* functions to be estimated. Since we are
-interested in effects of $$Z$ on a real-valued $$Y$$, we use an identity
+interested in effects of $$Z$$ on a real-valued $$Y$$, we use an identity
 link function so that $$G()$$ can be removed from the equations and we
 have $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha(x)+\beta(x)z$$. The
 authors propose estimating $$\alpha(\cdot)$$ and $$\beta(\cdot)$$ with one
