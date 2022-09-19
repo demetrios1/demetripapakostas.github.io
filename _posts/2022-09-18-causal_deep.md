@@ -492,12 +492,11 @@ $$\pi(\bm{X})=\qty(0.11, 0.90)$$, with mean of
 ![dgp_1_summary.png]({{site.baseurl}}/img/dgp_1_summary.png)
 
 ![Left panel: Bias of dgp with different $$n$$. Right: RMSE. This is in
-the "small" $$\beta$$ world.]({{ site.baseurl}}/img/summary_plot_smalltreat.pdf){#fig:BCF_better
-width="\\textwidth"}
+the "small" $$\beta$$ world.]({{ site.baseurl}}/img/summary_plot_smalltreat.pdf)
 
 ![Left panel: Bias of dgp with different $n$. Right: RMSE. This is in
 the "small" $\beta$ world. COMMENT THIS OUT\...LIKE THE STYLE BUT
-PROBABLY NOT APPROPRIATE](bias_plot_smalltreat.pdf){#fig:BCF_better
+PROBABLY NOT APPROPRIATE]({{ site.baseurl}}/img/bias_plot_smalltreat.pdf){#fig:BCF_better
 width="\\textwidth"}
 
 ![Left panel: Bias of dgp with different $n$. Right: RMSE. This is in
