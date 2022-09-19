@@ -2,17 +2,27 @@
 abstract: |
   *\[Add abstract\]*
 author:
-- |
-  Andrew Herren\
-  Demetrios Papakostas\
-  P. Richard Hahn\
-  Francisco Castillo
+  - |
+    Andrew Herren\
+    Demetrios Papakostas\
+    P. Richard Hahn\
+    Francisco Castillo
 bibliography:
-- deep-causal-paper.bib
-title: |
-  **Deep Learning for Causal Inference**\
-  A Comparison of Architectures for Heterogeneous Treatment Effect
-  Estimation
+  - deep-causal-paper.bib
+title: >-
+  **Deep Learning for Causal Inference**\A Comparison of Architectures for
+  Heterogeneous Treatment EffectEstimation
+published: true
+layout: post
+subtitle: Each post also has a subtitle
+gh-repo: daattali/beautiful-jekyll
+gh-badge:
+  - star
+  - fork
+  - follow
+tags:
+  - test
+comments: true
 ---
 
 # Introduction
