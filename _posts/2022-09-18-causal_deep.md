@@ -244,11 +244,15 @@ $$\mathbb{E}\left(Y^1 - Y^0 | X = x\right)$$ for any $$x$$. Before
 discussing the specific architecture, we introduce some more clarifying
 terminology and notation. This construction of treatment effect
 heterogeneity follows that of [@hahn2020bayesian]. Consider the
-following model $$\begin{aligned}
+following model 
+$$\begin{aligned}
         Y &= \alpha\left(X\right) + \beta\left(X\right) Z + \varepsilon\\
         \varepsilon &\sim \mathcal{N}\left(0, \sigma_{\varepsilon} \right)\\
         Z &\sim \textrm{Bernoulli}\left(\pi(X)\right)
-    \end{aligned}$$ In this case, $\beta\left(X\right)$ corresponds to
+    \end{aligned}$$ 
+    
+  In this case, $$\beta\left(X\right)$$ 
+ corresponds to
 the treatment effect function, which given the assumptions in the prior
 section, can be written as
 $$\mathbb{E}\left(Y \mid X, Z = 1\right) - \mathbb{E}\left(Y \mid X, Z = 0\right)$$.
@@ -347,7 +351,7 @@ reference="fig:farrell-pic"}).
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha){#fig:farrell-pic width="12cm"}
+as an argument.]({{site.baseurl}}/img/NN_draw_farrell_alpha)
 
 Since $$Y$$ is real-valued, we use mean squared error (MSE) as a loss
 function in training each of the methods introduced in this section.
