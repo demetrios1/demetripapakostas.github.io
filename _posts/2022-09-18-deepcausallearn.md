@@ -222,7 +222,7 @@ The architecture of the model is discussed in depth in later sections, so here w
 	The output of this architecture is then a linear combination of the two nodes in the parameters layer, $\alpha(x)+\beta(x)z$ (see Figure \ref{fig:farrell-pic}).
     
 
-    ![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_farrell_alpha.png)
+![The Farrell method with a 3-dimensional vector of covariates, X, 4 nodes in  each hidden layer (in practice these layers are usually much deeper).  G is an activation function.]({{site.baseurl}}/_posts/NN_draw_farrell_alpha.png)
 
     
 
