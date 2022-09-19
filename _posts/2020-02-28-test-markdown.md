@@ -15,23 +15,7 @@ published: true
 
 
 
-	\title{\textbf{Deep Learning for Causal Inference}\\ 
-		\Large{A Comparison of Architectures for Heterogeneous Treatment Effect Estimation}}
-	\author{Andrew Herren \\Demetrios Papakostas\\ P. Richard Hahn\\ Francisco Castillo}
-	\date{}
-	
-	\maketitle
-	%	\tableofcontents
-	%	\newpage
-	\begin{abstract}
-		\textit{[Add abstract]}
-	\end{abstract}
-	%	\begin{itemize}
-		%		\item Main takeaways: We edit the BCF DGP (slightly), find that we have some evidence of RIC in the Farrell setup.  In the case where the treatment is smaller than the prognostic effect, the separate networks approach works better.  
-		%		\item When the magnitude of the treatment is \emph{larger} than the prognostic, the shared network architecture outperforms, especially at smaller $n$.  This is probably due to having more parameters to learn the function, which is mostly driven by the treatment function.
-		%	\end{itemize}
-	
-	\section{Introduction}
+	##Introduction
 	A common problem in causal inference is to infer the effect of a binary treatment, 
 	$Z$, on a scalar-valued outcome $Y$. When the effect of $Z$ on $Y$ is posited to be constant 
 	for all subjects, or \textit{homogeneous}, the estimand of interest (average treatment effect) is a scalar-valued 
@@ -41,7 +25,8 @@ published: true
 	a scalar-valued parameter but a function of a (potentially high dimensional) covariate vector $X$. In recent years, 
 	researchers have proposed to use machine learning methods for nonparametric CATE estimation (\cite{hahn2020bayesian}; \cite{krantsevich2021stochastic},
 	\cite{hill2011bayesian}; \cite{wager2018estimation}; \cite{farrell2020deep}).  Additional methods that have been introduced include TARNET \cite{shalit} and Dragonnet \cite{shi2019adapting}.  The main focus of this document will be comparing \cite{farrell2020deep} and the method we introduce, as they are the most similar in nature.  
-	
+    
+    
 	This paper focuses specifically on CATE estimators that rely on deep neural networks. 
 	While neural networks are universal function approximators (\cite{cybenko1989approximation}), 
 	nature does not typically provide treatment effects for use as ``training data," and estimation 
