@@ -478,7 +478,7 @@ $$\pi(\bm{X})=\qty(0.11, 0.90)$$, with mean of
 
 ![demetri_link.JPG]({{site.baseurl}}/demetri_link.JPG)
 
-![dgp_1_summary.png]({{site.baseurl}}/dgp_1_summary.png)
+![dgp_1_summary.png]({{site.baseurl}}/img/dgp_1_summary.png)
 
 ![Left panel: Bias of dgp with different $$n$$. Right: RMSE. This is in
 the "small" $$\beta$$ world.](summary_plot_smalltreat.pdf){#fig:BCF_better
