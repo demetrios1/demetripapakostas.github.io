@@ -23,12 +23,13 @@ gh-badge:
 tags:
   - test
 comments: true
+cover: img/dgp_1_summary.png
 ---
 
 # Introduction
 
 A common problem in causal inference is to infer the effect of a binary
-treatment, $$Z$$, on a scalar-valued outcome $$Y$$. When the effect of $Z$
+treatment, $$Z$$, on a scalar-valued outcome $$Y$$. When the effect of $$Z$$
   on $$Y$$ is posited to be constant for all subjects, or *homogeneous*, the
 estimand of interest (average treatment effect) is a scalar-valued
 parameter, which admits a number of common estimators. When the
