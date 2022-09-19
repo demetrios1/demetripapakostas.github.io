@@ -11,7 +11,7 @@ bibliography:
   - deep-causal-paper.bib
 title: >-
   **Deep Learning for Causal Inference**\A Comparison of Architectures for
-  Heterogeneous Treatment EffectEstimation
+  Heterogeneous Treatment Effect Estimation
 published: true
 ---
 
