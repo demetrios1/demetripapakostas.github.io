@@ -418,7 +418,14 @@ selection. $$\begin{aligned}
             \beta\left(X\right) &= \begin{cases}
                 0.20+0.5*X_1\cdot X_4& \text{small treatment to prognosis}\\
                 5+0.5*X_1\cdot X_4& \text{large treatment to prognosis}\\
-            \end{cases}
+            \end{cases}\\
+            \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdotX_5-0.2*X_2+1.5\\
+            \pi(X) &= 0.70*\Phi\left(\frac{\alpha(X)}{s(\alpha(X))}-3.5\right)+u/10+0.10\\
+            u&\sim \text{uniform}(0,1)\\
+            Y&= \alpha(X)+\beta(X)Z+\sigma\varepsilon\\
+            \varepsilon &\sim N(0,1)\\
+            \sigma  &= \text{sd}(\alpha(X))\cdot \kappa \\
+            Z &\sim \text{Bern}(p=\pi(X))
         \end{split}
         \label{eq:dgp1}
     \end{aligned}$$
