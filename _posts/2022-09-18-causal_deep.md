@@ -373,11 +373,11 @@ $$\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha\left(x, \hat{\pi}(x)\right)+\beta
 $$\beta$$ are given independent BART priors ([@chipman2010bart]).
 $$\hat{\pi}(x_i)$$ is an estimate of the propensity function We implement
 the BCF nnet architecture as in Figure
-[2](#fig:nnbcf-pic){reference-type="ref" reference="fig:nnbcf-pic"}.
+[2].
 
 ![The BCF nnet architecture, where $$G(\cdot)$$ is an activation function
 that takes $$\alpha(X)+\beta(X)Z$$ as an
-argument.]({{site.baseurl}}/img/NN_draw_alpha.png){#fig:nnbcf-pic width="16cm"}
+argument.]({{site.baseurl}}/img/NN_draw_alpha.png)
 
 
 While the shared-weights versus separate weights distinction between
