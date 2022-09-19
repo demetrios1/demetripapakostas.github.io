@@ -300,5 +300,4 @@ In the separate network approach, we build the architecture
 	
 \autoref{tab:sim_results_largetreat} shows results with a large treatment to prognosis ratio.  In this setting, even with RIC presumably still being relevant due to the strong targeted selection in \autoref{eq:dgp1} (see right panel of \autoref{fig:dpg1}), the large treatment effect dominating allows for the extra parameters of the shared network approach to out-perform the separate network approach.  However, as the sample size  increases, the gap disappears, leading us to believe with sufficient sample size, this difference in methods would be minimal.  
 	![dgp_1_summary.png]({{site.baseurl}}/_posts/dgp_1_summary.png)
-
-	
+    ![demetri_link.JPG]({{site.baseurl}}/demetri_link.JPG)
