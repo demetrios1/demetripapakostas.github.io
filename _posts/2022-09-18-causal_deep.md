@@ -348,17 +348,14 @@ this architecture is then a linear combination of the two nodes in the
 parameters layer, $$\alpha(x)+\beta(x)z$$ (see Figure
 [1](#fig:farrell-pic)
 
-%{reference-type="ref"
-reference="fig:farrell-pic"}).
+
 
 ![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
 as an argument.]({{ site.baseurl}}/img/NN_draw_farrell_alpha.png)  
 
-%{#fig:farrell-pic width="12cm"}
 
-<a href="{{ site.baseurl }}img/NN_draw_farrell_alpha.png" data-lightbox="falcon9-large" data-title="Farrell Method"><img src = "{{ site.baseurl }}img/NN_draw_farrell_alpha.png title='Farrell Method'> </a>
   
   
 
@@ -489,13 +486,13 @@ vs $$\pi$$, indicative of strong targeted selection. For this particular
 realization of , with $$n=10,000$$, the mean of $$\beta(\bm{X})=0.20$$, the
 mean of $$\alpha(\bm{X})=1.95$$, and the range of
 $$\pi(\bm{X})=\qty(0.11, 0.90)$$, with mean of
-0.37.](dgp_1_summary.png){#fig:dpg1 width="\\textwidth"}
+0.37.]({{ site.baseurl}}/img/dgp_1_summary.png)
 
 
 ![dgp_1_summary.png]({{site.baseurl}}/img/dgp_1_summary.png)
 
 ![Left panel: Bias of dgp with different $$n$$. Right: RMSE. This is in
-the "small" $$\beta$$ world.](summary_plot_smalltreat.pdf){#fig:BCF_better
+the "small" $$\beta$$ world.]({{ site.baseurl}}/img/summary_plot_smalltreat.pdf){#fig:BCF_better
 width="\\textwidth"}
 
 ![Left panel: Bias of dgp with different $n$. Right: RMSE. This is in
