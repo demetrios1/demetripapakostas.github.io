@@ -476,6 +476,10 @@ mean of $$\alpha(\bm{X})=1.95$$, and the range of
 $$\pi(\bm{X})=\qty(0.11, 0.90)$$, with mean of
 0.37.](dgp_1_summary.png){#fig:dpg1 width="\\textwidth"}
 
+![demetri_link.JPG]({{site.baseurl}}/demetri_link.JPG)
+
+![demetri_link.JPG]({{site.baseurl}}/dgp_1_summary.png)
+
 ![Left panel: Bias of dgp with different $$n$$. Right: RMSE. This is in
 the "small" $$\beta$$ world.](summary_plot_smalltreat.pdf){#fig:BCF_better
 width="\\textwidth"}
