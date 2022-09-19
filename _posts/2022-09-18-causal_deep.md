@@ -238,7 +238,7 @@ architecture.
 We adapt the notation of [@farrell2020deep] slightly to fit the
 conventions used above. As in prior sections, our goal here is to
 estimate a causal effect of a binary treatment $$Z$$, on a continuous
-outcome $Y$. Since we are interested in the effect's heterogeneity, we
+outcome $$Y$$. Since we are interested in the effect's heterogeneity, we
 must construct a model that will estimate
 $$\mathbb{E}\left(Y^1 - Y^0 | X = x\right)$$ for any $$x$$. Before
 discussing the specific architecture, we introduce some more clarifying
@@ -268,7 +268,7 @@ the above notation, we can partition $$X$$ into several categories:
 
 3.  **Propensity** features impact the outcome $$Y$$ through $$\pi(X)$$
 
-For example if $$\pi(X) = \sin(X_1) + \abs{X_3}$$, we would say that $$X_1$$
+For example if $$\pi(X) = \sin(X_1) + |X_3|$$, we would say that $$X_1$$
 and $$X_3$$ are propensity variables but $$X_2$$, for example, is not. These
 categories are of course not mutually exclusive, but can be made so by
 considering their combinations. We avoid the complete factorial
@@ -418,14 +418,7 @@ selection. $$\begin{aligned}
             \beta\left(X\right) &= \begin{cases}
                 0.20+0.5*X_1\cdot X_4& \text{small treatment to prognosis}\\
                 5+0.5*X_1\cdot X_4& \text{large treatment to prognosis}\\
-            \end{cases}\\
-            \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdotX_5}-0.2*X_2+1.5\\
-            \pi(X) &= 0.70*\Phi\left(\frac{\alpha(X)}{s(\alpha(X))}-3.5\right)+u/10+0.10\\
-            u&\sim \text{uniform}(0,1)\\
-            Y&= \alpha(X)+\beta(X)Z+\sigma\varepsilon\\
-            \varepsilon &\sim N(0,1)\\
-            \sigma  &= \text{sd}(\alpha(X))\cdot \kappa \\
-            Z &\sim \text{Bern}(p=\pi(X))
+            \end{cases}
         \end{split}
         \label{eq:dgp1}
     \end{aligned}$$
