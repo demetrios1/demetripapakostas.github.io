@@ -115,7 +115,7 @@ Causal inference is concerned with the effect of a treatment, which we
 denote as $Z$, on an outcome $Y$. In general, both the treatment and
 outcome can be continuous, categorical, or binary. For the purposes of
 this paper, we restrict our attention to the case of a binary treatment
-($\mathcal{Z} = \cbr{0,1}$) and a continuous outcome
+($\mathcal{Z} = \left{0,1\right}$) and a continuous outcome
 ($\mathcal{Y} = \mathbb{R}$).
 
 Our overview of the causal inference assumptions largely follows that of
@@ -235,7 +235,7 @@ a treatment effect for the conditional distribution of $Y^1$ and $Y^0$
 in which $X = x$. Note that with this modification we define not a
 single parameter $\beta$ but a function $X \longrightarrow \beta(X)$. If
 $X$ is binary or categorical, this can be done empirically by
-partitioning the data into subsets $\left\{x: x = s\right\}$ and then
+partitioning the data into subsets $\left{x: x = s\right}$ and then
 estimating the ATE on the subsets. But in general, with continuous $X$
 or simply a large number of categorical $X$ variables, this approach
 becomes impossible and $\beta(X)$ must be estimated by fitting a model.
@@ -487,9 +487,9 @@ parameters. The other hyperparameters are the same as the BCF NNet and
 Shared Network approach.
 
 
-Below is a figure summarizing the effect of our data generating process.  The graphs indicate we should be witnessing strong RIC, making this is a fairly difficult CATE estimation problem.
+Below is a figure summarizing the effect of our data generating process.  The graphs indicate we should be witnessing strong RIC, making this is a fairly difficult CATE estimation problem.  On the left panel is istogram of  $\beta$.  On the right is a plot of $\alpha$ vs $\pi$, indicative  of strong targeted selection.  For this particular realization of our DGP, with $n=10,000$, the mean of $\beta(X)=0.20$, the mean of $\alpha(X)=1.95$, and the range of $\pi(X)=\left(0.11, 0.90\right)$, with mean of 0.37.
 
-![Left panel: Histogram of  $\beta$.  On the right is a plot of $\alpha$ vs $\pi$, indicative  of strong targeted selection.  For this particular realization of \autoref{eq:dgp1}, with $n=10,000$, the mean of $\beta(\bm{X})=0.20$, the mean of $\alpha(\bm{X})=1.95$, and the range of $\pi(\bm{X})=\qty(0.11, 0.90)$, with mean of 0.37.]({{site.baseurl}}//img/dgp_1_summary.png)
+![Left panel: Histogram of  $\beta$.  On the right is a plot of $\alpha$ vs $\pi$, indicative  of strong targeted selection.  For this particular realization of our DGP, with $n=10,000$, the mean of $\beta(X)=0.20$, the mean of $\alpha(X)=1.95$, and the range of $\pi(X)=\left(0.11, 0.90\right)$, with mean of 0.37.]({{site.baseurl}}//img/dgp_1_summary.png)
 
 
 
