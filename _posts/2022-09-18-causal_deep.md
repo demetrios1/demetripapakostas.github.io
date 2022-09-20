@@ -452,7 +452,6 @@ X_5 &\sim \text{Bern}(p=0.5)\\
 X &= \left(X_1, X_2, X_3, X_4, X_5\right)\\
 \beta\left(X\right) &= \begin{cases}
 0.20+0.5X_1\cdot X_4& \text{small treatment to prognosis}\\
-5+0.5X_1\cdot X_4& \text{large treatment to prognosis}\\
 \end{cases}\\
 \alpha\left(X\right)&=0.5\cos\left(2X_1\right)+0.95*|X_3|\cdot X_5-0.2X_2+1.5\\
 \pi(X) &= 0.70\Phi\left(\frac{\alpha(X)}{s(\alpha(X))}-3.5\right)+u/10+0.10\\
@@ -488,26 +487,7 @@ parameters. The other hyperparameters are the same as the BCF NNet and
 Shared Network approach.
 
 
-
-shows results using both the Shared Network approach [@farrell2020deep]
-and the BCF Nnet approach we present. This table indicates some RIC
-which biases the Farrell approach. The method we propose also has
-additional flexibility in that the propensity estimate can be estimated
-with any method and passed in, it need not be a MLP approach.
-Additionally, because we separate the networks, like in the original BCF
-paper [@hahn2020bayesian], we can add additional regularization on the
-$\beta$ network[^1].
-
-shows results with a large treatment to prognosis ratio. In this
-setting, even with RIC presumably still being relevant due to the strong
-targeted selection in (see right panel of ), the large treatment effect
-dominating allows for the extra parameters of the shared network
-approach to out-perform the separate network approach. However, as the
-sample size increases, the gap disappears, leading us to believe with
-sufficient sample size, this difference in methods would be minimal.
-
-
-
+Below is a figure summarizing the effect of our data generating process.  The graphs indicate we should be witnessing strong RIC, making this is a fairly difficult CATE estimation problem.
 
 ![Left panel: Histogram of  $\beta$.  On the right is a plot of $\alpha$ vs $\pi$, indicative  of strong targeted selection.  For this particular realization of \autoref{eq:dgp1}, with $n=10,000$, the mean of $\beta(\bm{X})=0.20$, the mean of $\alpha(\bm{X})=1.95$, and the range of $\pi(\bm{X})=\qty(0.11, 0.90)$, with mean of 0.37.]({{site.baseurl}}//img/dgp_1_summary.png)
 
