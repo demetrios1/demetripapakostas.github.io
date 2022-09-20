@@ -115,7 +115,7 @@ Causal inference is concerned with the effect of a treatment, which we
 denote as $Z$, on an outcome $Y$. In general, both the treatment and
 outcome can be continuous, categorical, or binary. For the purposes of
 this paper, we restrict our attention to the case of a binary treatment
-($\mathcal{Z} = \{0,1\}$) and a continuous outcome
+($\mathcal{Z} = \{ 0,1 \}$) and a continuous outcome
 ($\mathcal{Y} = \mathbb{R}$).
 
 Our overview of the causal inference assumptions largely follows that of
@@ -235,7 +235,7 @@ a treatment effect for the conditional distribution of $Y^1$ and $Y^0$
 in which $X = x$. Note that with this modification we define not a
 single parameter $\beta$ but a function $X \longrightarrow \beta(X)$. If
 $X$ is binary or categorical, this can be done empirically by
-partitioning the data into subsets $\{x: x = s\}$ and then
+partitioning the data into subsets $\{ x: x = s \}$ and then
 estimating the ATE on the subsets. But in general, with continuous $X$
 or simply a large number of categorical $X$ variables, this approach
 becomes impossible and $\beta(X)$ must be estimated by fitting a model.
