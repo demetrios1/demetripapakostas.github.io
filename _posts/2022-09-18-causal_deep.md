@@ -151,10 +151,7 @@ random variable $Y = ZY^1 + (1 - Z)Y^0$. In order to use a dataset of
 independent and identically distributed (iid) samples of $Z$ and $Y$ to
 estimate the ATE, we must make several *identifying* assumptions.
 
-<aside>
-ð¢ Assumptions
 
-</aside>
 
 1. *Exchangeability*: $Y^1, Y^0 \perp Z$
 2. *Positivity*: $0 < P(Z = 1) < 1$
@@ -368,12 +365,13 @@ parameter layer which outputs $\alpha(X)$ and $\beta(X)$. The output of
 this architecture is then a linear combination of the two nodes in the
 parameters layer, $\alpha(x)+\beta(x)z$ 
 
+The figure below is a pictoral representation of how the Farrell method works.
 
-
-The Farrell method with a 3-dimensional vector of covariates $X$, 4
+![The Farrell method with a 3-dimensional vector of covariates $X$, 4
 nodes in each hidden layer (in practice, these layers are usually much
 deeper). $G$ is an activation function that takes $\alpha(X)+\beta(X)Z$
-as an argument.
+as an argument.]({{site.baseurl}}//img/NN_draw_farrell_alpha.png)
+
 
 Since $Y$ is real-valued, we use mean squared error (MSE) as a loss
 function in training each of the methods introduced in this section.
@@ -393,7 +391,8 @@ the BCF nnet architecture as in the figure below:
 
 
 
-The BCF nnet architecture, where $G(\cdot)$ is an activation function that takes $\alpha(X)+\beta(X)Z$ as an argument.
+
+![The BCF nnet architecture, where $G(\cdot)$ is an activation function that takes $\alpha(X)+\beta(X)Z$ as an argument.]({{site.baseurl}}/\img\NN_draw_alpha.png)
 
 While the shared-weights versus separate weights distinction between
 Farrell and BCF nnet has been made clear, a subtle difference between
@@ -437,7 +436,7 @@ between $X$ and $Z$.
 
 # Simulation Summary
 
-is the first DGP we run. We choose a complex function for $\alpha$ and
+Below is the first DGP we run. We choose a complex function for $\alpha$ and
 strong targeted selection, and a simpler function for $\beta$ (which
 allows for heterogeneous effects) to illustrate the effect of targeted
 selection.
@@ -488,6 +487,8 @@ in layer 1 and 26 in layer 2 for both models. This is a total of 3,306
 parameters. The other hyperparameters are the same as the BCF NNet and
 Shared Network approach.
 
+
+
 shows results using both the Shared Network approach [@farrell2020deep]
 and the BCF Nnet approach we present. This table indicates some RIC
 which biases the Farrell approach. The method we propose also has
@@ -507,20 +508,21 @@ sufficient sample size, this difference in methods would be minimal.
 
 
 
-[Left panel: Histogram of $\beta$. On the right is a plot of $\alpha$
-vs $\pi$, indicative of strong targeted selection. For this particular
-realization of , with $n=10,000$, the mean of $\beta(X)=0.20$, the
-mean of $\alpha(X)=1.95$, and the range of
-$\pi(X)=\left(0.11, 0.90\right)$, with mean of
-0.37.
+
+![Left panel: Histogram of  $\beta$.  On the right is a plot of $\alpha$ vs $\pi$, indicative  of strong targeted selection.  For this particular realization of \autoref{eq:dgp1}, with $n=10,000$, the mean of $\beta(\bm{X})=0.20$, the mean of $\alpha(\bm{X})=1.95$, and the range of $\pi(\bm{X})=\qty(0.11, 0.90)$, with mean of 0.37.]({{site.baseurl}}//img/dgp_1_summary.png)
 
 
 
 
 
 
+The figure below compares a summary of  biases and rmse's across the 100 Monte Carlo runs for the shared and BCF-nnet architectures.  We run the DGP described above with $\kappa=1.0$ across 100 independent trials (varying $\varepsilon$) for each size $n$.  We generate $\bm{X}$ for each size $n$, but keep the $\bm{X}$ matrix the same for each of the 100 independent trials for each sample size (i.e. the $X$ vary across the sample sizes, but are constant at each iteration per sample size).  We train on the $n$ size, but test on a size of 10,000, to ensure we are looking at population parameters.  The benefits of the BCF NNet approach are lost, we hypothesize this is because any RIC introduced is offset by the large treatment, and since the treatment function compromises a good portion of the observed outcome, the extra parameters in the shared network should outperform the BCF NNet approach. 
+![Left panel: Bias of dgp with different $n$. Right: RMSE.  This is in the "small'' $\beta$ world.]({{site.baseurl}}/img/summary_plot_smalltreat.png)
 
-Comparing individual biases and rmse's across the 100 Monte Carlo runs for the shared and BCF-nnet architectures.
+Finally, the figure below gives a more comprehensive image by comparing individual biases and rmse's across the 100 Monte Carlo runs for the shared and BCF-nnet architectures.
+
+![Comparing Individual biases and rmse's across the 100 Monte Carlo runs for the shared and BCF architectures.]({{site.baseurl}}//img/compare_BCF_Farrell_indiv.png)
+
 
 # Code Example
 
