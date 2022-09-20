@@ -12,7 +12,7 @@ bibliography:
 title: >-
   Deep Learning for Causal Inference: A Comparison of Architectures for
   Heterogeneous Treatment EffectEstimation
-published: true
+published: false
 layout: post
 subtitle: Each post also has a subtitle
 gh-repo: daattali/beautiful-jekyll
@@ -32,7 +32,7 @@ cover: img/dgp_1_summary.png
 - Andrew Herren: [https://andrewherren.github.io/](https://andrewherren.github.io/)
 - Demetrios Papakostas: [https://demetripapakostas.com/](https://demetripapakostas.com/)
 - P. Richard Hahn: [https://math.la.asu.edu/~prhahn/](https://math.la.asu.edu/~prhahn/)
-- Francisco âKikoâ Castillo
+- Francisco "Kiko" Castillo
 
 ---
 
@@ -65,7 +65,7 @@ the most similar in nature.
 This paper focuses specifically on CATE estimators that rely on deep
 neural networks. While neural networks are universal function
 approximators ([@cybenko1989approximation]), nature does not typically
-provide treatment effects for use as "training data,\" and estimation
+provide treatment effects for use as "training data", and estimation
 proceeds by defining networks that can infer the CATE from available
 data. The architecture of a deep neural network, which refers to a
 specific composition of weights, data, and activation functions, plays a
@@ -332,7 +332,7 @@ different from the [@farrell2020deep] approach as their method shares
 weights between the $\alpha(X$ and $\beta(X)$ functions via the first
 two hidden layers. BCF nnet follows the approach of [@hahn2020bayesian]
 by training two completely separate neural networks for $\alpha(X)$ and
-$\beta(X)$. Finally, the "naive\" method estimates
+$\beta(X)$. Finally, the "naive" method estimates
 $\mathbb{E}\left(Y \mid X, Z = 1\right)$ with one network and
 $\mathbb{E}\left(Y \mid X, Z = 0\right)$ with another network so that
 $\beta(X)$ can be estimated as a difference between these networks'
