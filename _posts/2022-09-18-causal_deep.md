@@ -12,7 +12,7 @@ bibliography:
 title: >-
   Deep Learning for Causal Inference: A Comparison of Architectures for
   Heterogeneous Treatment EffectEstimation
-published: false
+published: true
 layout: post
 subtitle: Each post also has a subtitle
 gh-repo: daattali/beautiful-jekyll
