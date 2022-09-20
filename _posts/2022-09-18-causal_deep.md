@@ -115,7 +115,7 @@ Causal inference is concerned with the effect of a treatment, which we
 denote as $Z$, on an outcome $Y$. In general, both the treatment and
 outcome can be continuous, categorical, or binary. For the purposes of
 this paper, we restrict our attention to the case of a binary treatment
-($\mathcal{Z} = \left\{0,1\right\}$) and a continuous outcome
+($\mathcal{Z} = \cbr{0,1}$) and a continuous outcome
 ($\mathcal{Y} = \mathbb{R}$).
 
 Our overview of the causal inference assumptions largely follows that of
