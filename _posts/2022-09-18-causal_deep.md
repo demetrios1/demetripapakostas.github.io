@@ -73,14 +73,14 @@ crucial role in this process, along with regularization and training
 techniques. This paper compares empirical CATE estimates of several
 architectures. The first two methods represent outcomes as a sum of the
 CATE, $\beta(X)$ , and the prognostic effect $\alpha(X)$, which occurs
-regardless of treatment status. In the [@farrell2020deep] architecture,
+regardless of treatment status. In the {% cite farrell2020deep %} architecture,
 both $\alpha(X)$ and $\beta(X)$ emerge from a shared set of hidden
 layers. Essentially, this architecture learns a common set of basis
 functions for $\alpha(X)$ and $\beta(X)$ and then estimates separate
 coefficients for each those basis functions. We refer to this approach
 as "the Farrell method" or simply "Farrell" for the remainder of the
 paper. The second method an extension of Bayesian Causal Forests (BCF)
-([@hahn2020bayesian]). This method, which we hereafter refer to as
+({% cite hahn2020bayesian %}). This method, which we hereafter refer to as
 "BCF-nnet" or "nnet BCF", uses completely separate neural networks for
 $\alpha(X)$ and $\beta(X)$. Finally, we consider a "naive" approach
 that partitions the data into treatment and control groups, and learns a
@@ -119,7 +119,7 @@ this paper, we restrict our attention to the case of a binary treatment
 ($\mathcal{Y} = \mathbb{R}$).
 
 Our overview of the causal inference assumptions largely follows that of
-[@hernan2020causal]. We are interested in inferring the effect of a
+{% cite hernan2020causal %}. We are interested in inferring the effect of a
 treatment, or intervention, on an outcome when nothing is changed except
 the treatment being administered. In experimental settings, this causal
 interpretation is often provided by the study design (randomized
@@ -135,7 +135,7 @@ for cases in which $Z$ has been set equal to $i$. The counterfactual
 nature of these random variables is important to underscore before we
 define assumptions and estimators. These two random variables are often
 referred to as *potential outcomes* (see for example
-[@hernan2020causal]). The variables are random because even in the
+{% cite hernan2020causal %}). The variables are random because even in the
 counterfactual scenario in which only treatment $i$ has been
 administered, $Y$ may potentially be influenced by other factors.
 
@@ -182,7 +182,7 @@ data, but as long as $\mathbb{E}\left(\hat{p}(Z = 1)\right) = p(Z = 1)$,
 the estimator will still be unbiased.
 
 IPW is just one of many estimators of the average treatment effect. We
-refer the interested reader to [@hernan2020causal] for more detail.
+refer the interested reader to {% cite hernan2020causal %} for more detail.
 
  We now introduce the random variable $X$ to denote a vector of *covariates* of the outcome (often referred to as "features" in machine learning).
 These covariates might include demographic variables, health markers
@@ -244,16 +244,16 @@ A tempting and convenient first step in CATE estimation would be use a
 linear model for $\beta(X)$. More recently, advances in computer speed
 and a growing recognition of the complexity of many causal processes has
 spurred interest in nonparametric estimators of $\beta(X)$. To name a
-few examples, [@hahn2020bayesian] and [@hill2011bayesian] use Bayesian
-tree ensembles, [@wager2018estimation] use random forests, and
-[@farrell2020deep] use deep learning. The focus of this paper will be to
-compare the method introduced in [@farrell2020deep] to a novel
-architecture inspired by [@hahn2020bayesian] and a naive partition-based
+few examples, {% cite hahn2020bayesian] and {% cite hill2011bayesian %} use Bayesian
+tree ensembles,  {% cite wager2018estimation] use random forests, and
+{% cite farrell2020deep] use deep learning. The focus of this paper will be to
+compare the method introduced in  {% cite farrell2020deep %} to a novel
+architecture inspired by  {% cite hahn2020bayesian %} and a naive partition-based
 architecture.
 
 ## Estimating CATE using Deep Learning
 
-We adapt the notation of [@farrell2020deep] slightly to fit the
+We adapt the notation of {% cite farrell2020deep %} slightly to fit the
 conventions used above. As in prior sections, our goal here is to
 estimate a causal effect of a binary treatment $Z$, on a continuous
 outcome $Y$. Since we are interested in the effect's heterogeneity, we
@@ -517,7 +517,7 @@ the methods developed in this document are the way to go. For one, we
 show in a plausible simulation study the benefits of our methodology.
 From a sheer performance point of view, our method provides an advantage
 over other competitive deep learning causal tools. Additionally, the
-parameterization of [@hahn2020bayesian] provides multiple advantages.
+parameterization of {% cite hahn2020bayesian %} provides multiple advantages.
 Because we split the prognosis and treatment networks, we can regularize
 the networks differently, we could use different hyperparameters for
 each, we can include different controls for each. This flexibility could
