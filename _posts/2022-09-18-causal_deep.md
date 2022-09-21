@@ -38,7 +38,7 @@ cover: img/dgp_1_summary.png
 
 ## Big Picture/Abstract:
 
-> Causal inference has gained much popularity in recent years, with interests ranging from academic, to industrial, to educational, and all in between.  Concurrently, the study and usage of neural networks has also grown profoundly (albeit at a far faster rate).  What we aim to do in this blog write-up is demonstrate a Neural Network causal inference architecture.  We show in a simulation study  that our architecture improves upon existing causal neural network architectures, and provide a code demonstration of our pytorch implementation.  A pdf with more detail is attached.
+> Causal inference has gained much popularity in recent years, with interests ranging from academic, to industrial, to educational, and all in between.  Concurrently, the study and usage of neural networks has also grown profoundly (albeit at a far faster rate).  What we aim to do in this blog write-up is demonstrate a Neural Network causal inference architecture.  We show in a simulation study  that our architecture improves upon existing causal neural network architectures, and provide a code demonstration of our pytorch implementation.  A pdf with more detail is available.  
 > 
 
 # Introduction
@@ -540,4 +540,3 @@ dropout rates, implementing early stopping, or weight-decay, amongst
 other approaches. In general, an advantage of Neural Networks,
 particularly when using a well developed and maintained service like
 pyTorch is the ease in customizing one's model for one's needs.
-
