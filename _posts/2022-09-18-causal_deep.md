@@ -55,11 +55,11 @@ effect (CATE), is evident in the fact that the estimand is no longer a
 scalar-valued parameter but a function of a (potentially high
 dimensional) covariate vector $X$. In recent years, researchers have
 proposed to use machine learning methods for nonparametric CATE
-estimation ([@hahn2020bayesian]; [@krantsevich2021stochastic],
-[@hill2011bayesian]; [@wager2018estimation]; [@farrell2020deep]).
-Additional methods that have been introduced include TARNET [@shalit]
-and Dragonnet [@shi2019adapting]. The main focus of this document will
-be comparing [@farrell2020deep] and the method we introduce, as they are
+estimation ({%hahn2020bayesian]; {%krantsevich2021stochastic%},
+{%hill2011bayesian%}; {%wager2018estimation%}; {%farrell2020deep%}).
+Additional methods that have been introduced include TARNET %{shalit%}
+and Dragonnet {%shi2019adapting%}. The main focus of this document will
+be comparing {%farrell2020deep%} and the method we introduce, as they are
 the most similar in nature.
 
 This paper focuses specifically on CATE estimators that rely on deep
@@ -509,8 +509,8 @@ Finally, the figure below gives a more comprehensive image by comparing individu
 # Discussion
 
 What is preferrable about this proposed methodology to the state of the
-art tree methods, such as [@wager2018estimation], [@hahn2020bayesian],
-or [@krantsevich2021stochastic]? We do not aim to answer that question,
+art tree methods, such as {%@wager2018estimation%}, [@hahn2020bayesian],
+or {%@krantsevich2021stochastic%}? We do not aim to answer that question,
 but rather instead provide some evidence that if a researcher is intent
 on using some deep learning architecture for their causal needs, then
 the methods developed in this document are the way to go. For one, we
@@ -532,9 +532,12 @@ support.
 
 We thank ASU Research Computing facilities for providing computing
 resources.
+{% bibliography --cited %}
+
 
 [^1]: In the world of neural networks, this could entail changing
 dropout rates, implementing early stopping, or weight-decay, amongst
 other approaches. In general, an advantage of Neural Networks,
 particularly when using a well developed and maintained service like
 pyTorch is the ease in customizing one's model for one's needs.
+
