@@ -56,7 +56,7 @@ scalar-valued parameter but a function of a (potentially high
 dimensional) covariate vector $X$. In recent years, researchers have
 proposed to use machine learning methods for nonparametric CATE
 estimation ({% cite hahn2020bayesian %}; {% cite krantsevich2021stochastic %},
-{%hill2011bayesian%}; {%wager2018estimation%}; {% cite farrell2020deep %}).
+{% cite hill2011bayesian %}; {% cite wager2018estimation %}; {% cite farrell2020deep %}).
 Additional methods that have been introduced include TARNET {% cite shalit %}
 and Dragonnet {% cite shi2019adapting %}. The main focus of this document will
 be comparing {% cite farrell2020deep %} and the method we introduce, as they are
@@ -261,7 +261,7 @@ must construct a model that will estimate
 $\mathbb{E}\left(Y^1 - Y^0 | X = x\right)$ for any $x$. Before
 discussing the specific architecture, we introduce some more clarifying
 terminology and notation. This construction of treatment effect
-heterogeneity follows that of [@hahn2020bayesian]. Consider the
+heterogeneity follows that of {% cite hahn2020bayesian %}. Consider the
 following model
 
 $$
@@ -314,23 +314,23 @@ $\alpha(X) = \mathbb{E}\left(Y | X, Z = 0\right)$ would be high
 otherwise). This is an extreme version of confounding, in which the
 entire prognostic function is an input to the propensity function and
 thus to the assignment of treatment. As is discussed in depth in
-[@hahn2020bayesian], this phenomenon is both highly plausible in
+{% cite hahn2020bayesian %}, this phenomenon is both highly plausible in
 real-world settings and also vexing to many approaches to CATE
 estimation.
 
 The architecture of the model is discussed in depth in later sections,
 so here we simply note the high-level differences between the Farrell
-method and nnet-BCF. [@farrell2020deep] propose to fit a model
+method and nnet-BCF. {% cite farrell2020deep %} propose to fit a model
 $\mathbb{E}\left(Y\right) = \alpha\left(X\right) + \beta\left(X\right) Z$
 using a neural network with two hidden layers to which map to two
 separate output nodes: $\alpha\left(X\right)$ and $\beta\left(X\right)$.
-[@hahn2020bayesian] fit a similar model using Bayesian Additive
-Regression Trees (BART) ([@chipman2010bart]), with one key distinction.
+{% cite hahn2020bayesian %} fit a similar model using Bayesian Additive
+Regression Trees (BART) ({% cite chipman2010bart %}), with one key distinction.
 $\alpha\left(X\right)$ and $\beta\left(X\right) Z$ are fit as completely
 separate models with no information shared during training. This is
-different from the [@farrell2020deep] approach as their method shares
+different from the {% cite farrell2020deep %} approach as their method shares
 weights between the $\alpha(X$ and $\beta(X)$ functions via the first
-two hidden layers. BCF nnet follows the approach of [@hahn2020bayesian]
+two hidden layers. BCF nnet follows the approach of {% cite hahn2020bayesian %}
 by training two completely separate neural networks for $\alpha(X)$ and
 $\beta(X)$. Finally, the "naive" method estimates
 $\mathbb{E}\left(Y \mid X, Z = 1\right)$ with one network and
@@ -346,7 +346,7 @@ model comparison.
 
 ## Joint Training Architecture (Farrell/Shared Network)
 
-In [@farrell2020deep], the authors posit that
+In {% cite farrell2020deep] %}, the authors posit that
 $\mathbb{E}\left(Y\mid X=x, Z=z\right)=G\left(\alpha(x)+\beta(x)z\right)$
 
  where $G(u), u\in \mathbb{R}$ is a known
@@ -378,14 +378,14 @@ function in training each of the methods introduced in this section.
 
 ## BCF nnet
 
-Based on the results and discussion in [@hahn2020bayesian], we
+Based on the results and discussion in {% cite hahn2020bayesian %}, we
 hypothesize that splitting $\alpha(\cdot)$ and $\beta(\cdot)$ into
 separate networks with no shared weights may yield better CATE estimates
 on some data generating processes (DGPs). The BCF nnet method specifies
 $\mathbb{E}\left(Y\mid X=x, Z=z\right)=\alpha\left(x, \hat{\pi}(x)\right)+\beta(x)z$
 
- In [@hahn2020bayesian], $\alpha$ and
-$\beta$ are given independent BART priors ([@chipman2010bart]).
+ In {% cite hahn2020bayesian %}, $\alpha$ and
+$\beta$ are given independent BART priors ({% cite chipman2010bart %}).
 $\hat{\pi}(x_i)$ is an estimate of the propensity function We implement
 the BCF nnet architecture as in the figure below:
 
@@ -400,9 +400,9 @@ the architectures is that BCF nnet allows for an estimate of the
 propensity function to be incorporated as a feature in the $\alpha(X)$
 network. Since targeted selection implies $\alpha(X)$ is a function of
 $\pi(X)$, this parameterization was observed to be helpful in
-[@hahn2020bayesian].
+{% cite hahn2020bayesian %}.
 
-In [@farrell2020deep], the authors develop confidence intervals for
+In {% cite farrell2020deep %}, the authors develop confidence intervals for
 their architecture's estimates (relying on influence functions, a common
 tool for calculating standard errors in non-parametrics). We
 incorporated these intervals into our architecture, but found that they
@@ -509,8 +509,8 @@ Finally, the figure below gives a more comprehensive image by comparing individu
 # Discussion
 
 What is preferrable about this proposed methodology to the state of the
-art tree methods, such as {%@wager2018estimation%}, [@hahn2020bayesian],
-or {%@krantsevich2021stochastic%}? We do not aim to answer that question,
+art tree methods, such as {% cite wager2018estimation %}, {% cite hahn2020bayesian %},
+or {% cite krantsevich2021stochastic %}? We do not aim to answer that question,
 but rather instead provide some evidence that if a researcher is intent
 on using some deep learning architecture for their causal needs, then
 the methods developed in this document are the way to go. For one, we
