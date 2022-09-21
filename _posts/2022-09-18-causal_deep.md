@@ -55,16 +55,16 @@ effect (CATE), is evident in the fact that the estimand is no longer a
 scalar-valued parameter but a function of a (potentially high
 dimensional) covariate vector $X$. In recent years, researchers have
 proposed to use machine learning methods for nonparametric CATE
-estimation ({%hahn2020bayesian]; {%krantsevich2021stochastic%},
-{%hill2011bayesian%}; {%wager2018estimation%}; {%farrell2020deep%}).
-Additional methods that have been introduced include TARNET %{shalit%}
-and Dragonnet {%shi2019adapting%}. The main focus of this document will
-be comparing {%farrell2020deep%} and the method we introduce, as they are
+estimation ({% cite hahn2020bayesian %}; {% cite krantsevich2021stochastic %},
+{%hill2011bayesian%}; {%wager2018estimation%}; {% cite farrell2020deep %}).
+Additional methods that have been introduced include TARNET {% cite shalit %}
+and Dragonnet {% cite shi2019adapting %}. The main focus of this document will
+be comparing {% cite farrell2020deep %} and the method we introduce, as they are
 the most similar in nature.
 
 This paper focuses specifically on CATE estimators that rely on deep
 neural networks. While neural networks are universal function
-approximators ([@cybenko1989approximation]), nature does not typically
+approximators ({% cite cybenko1989approximation %}), nature does not typically
 provide treatment effects for use as "training data", and estimation
 proceeds by defining networks that can infer the CATE from available
 data. The architecture of a deep neural network, which refers to a
